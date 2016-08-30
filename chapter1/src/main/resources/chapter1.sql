@@ -2,7 +2,7 @@ drop database if exists sampledb;
 create database sampledb DEFAULT CHARACTER utf8;
 use sampledb;
 
-create table t_user(
+create table sampledb.t_user(
 	user_id int auto_increment primary key,
 	user_name varchar(30),
 	credits int,
@@ -12,7 +12,7 @@ create table t_user(
 )
 engine=innodb;
 
-create table t_login_log(
+create table sampledb.t_login_log(
 	login_log_id int auto_increment primary key,
 	user_id int,
 	ip varchar(23),
@@ -20,4 +20,4 @@ create table t_login_log(
 )
 engine=innodb;
 
-insert into t_user(user_name,password) values('admin','123456');
+insert into sampledb.t_user(user_name,password) values('admin','123456');
