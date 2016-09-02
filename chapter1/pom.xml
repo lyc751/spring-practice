@@ -8,6 +8,46 @@
   <name>chapter1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+      <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api -->
+      <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-jsp-api</artifactId>
+          <version>7.0.65</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+      <dependency>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-servlet-api</artifactId>
+          <version>7.0.65</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->
+      <dependency>
+          <groupId>org.apache.taglibs</groupId>
+          <artifactId>taglibs-standard-impl</artifactId>
+          <version>1.2.5</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api -->
+      <dependency>
+          <groupId>javax.servlet.jsp.jstl</groupId>
+          <artifactId>jstl-api</artifactId>
+          <version>1.2</version>
+          <exclusions>
+              <exclusion>
+                  <groupId>javax.servlet</groupId>
+                  <artifactId>servlet-api</artifactId>
+              </exclusion>
+              <exclusion>
+                  <groupId>javax.servlet.jsp</groupId>
+                  <artifactId>jsp-api</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
       <dependency>
           <groupId>org.springframework</groupId>
@@ -32,6 +72,14 @@
           <artifactId>spring-web</artifactId>
           <version>4.1.6.RELEASE</version>
       </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>4.1.6.RELEASE</version>
+      </dependency>
+
       <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
       <dependency>
           <groupId>org.springframework</groupId>
@@ -48,6 +96,13 @@
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-tx</artifactId>
+          <version>4.1.6.RELEASE</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aspects</artifactId>
           <version>4.1.6.RELEASE</version>
       </dependency>
 

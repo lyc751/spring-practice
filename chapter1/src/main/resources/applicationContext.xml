@@ -16,7 +16,6 @@
        ">
     <context:component-scan base-package="org.lyc.spring.practice.chapter1.dao"/>
     <context:component-scan base-package="org.lyc.spring.practice.chapter1.service"/>
-
     <!--使用p标签可以替代property属性-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"
           p:driverClassName="com.mysql.jdbc.Driver"
@@ -26,6 +25,21 @@
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
           p:dataSource-ref="dataSource"/>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="dataSource"/>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config proxy-target-class="true" >
+        <aop:pointcut id="serviceMethod" expression="execution(* org.lyc.spring.practice.chapter1.service..*(..))" />
+        <aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
+    </aop:config>
+
 
 
 </beans>
