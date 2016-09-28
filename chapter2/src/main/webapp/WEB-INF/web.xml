@@ -24,6 +24,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>chapter1</servlet-name>
-    <url-pattern>*.html</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>
