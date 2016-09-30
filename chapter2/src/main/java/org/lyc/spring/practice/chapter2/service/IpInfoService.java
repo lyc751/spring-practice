@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 public class IpInfoService {
 
     @Autowired
-    private IpInfoDao infoDao;
+    private IpInfoDao ipInfoDao;
 
     public String getIpInfo(String ip){
         Long ipid = CommonUtil.ipToLong(ip);
-        return infoDao.getIpInfo(ipid);
+        return ipInfoDao.getIpInfo(ipid);
     }
 }

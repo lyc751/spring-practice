@@ -22,5 +22,7 @@
         <constructor-arg index="2" type="java.lang.String" value="Tg@Rs12fg"/>
     </bean>
 
-
+    <bean id="ipInfoDao" class="org.lyc.spring.practice.chapter2.dao.IpInfoDao"
+        p:dbNum="4"
+    />
 </beans>

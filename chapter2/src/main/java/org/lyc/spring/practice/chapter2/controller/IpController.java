@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by admin on 2016/9/28.
  */
-@RestController("/ip")
+@RestController
+@RequestMapping(value = "/ip")
 public class IpController {
 
     @Autowired
